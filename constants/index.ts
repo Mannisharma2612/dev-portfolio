@@ -207,21 +207,21 @@ export const EXPERIENCES = [
     company: "GeekyAnts",
     duration: "2021 - 2022",
     description:
-      "Created a comprehensive design system by developing versatile UI components, successfully integrating micro frontends into a cohesive and modular architecture, and implementing real-time data monitoring graphs for dynamic analysis of key metrics, empowering users to make informed decisions",
+      "Engineered a comprehensive design system with flexible UI components, integrated micro frontends into a cohesive and scalable architecture, and deployed real-time data analytics graphs to enable dynamic monitoring of key metrics, empowering users with actionable insights.",
   },
   {
     title: "Software Engineer",
     company: "GeekyAnts",
     duration: "2022 - 2023",
     description:
-      "Constructed a dynamic form system that fetched form fields from APIs based on user inputs, implemented Formik validation for data accuracy amidst dynamic field changes. Additionally, developed a comprehensive configuration management system, providing users the ability to seamlessly update application configurations within the ecosystem",
+      "Implemented an automated system for responding to multiple-choice questions (MCQs) based on Redux data along with a JSON configuration file which increased the efficiency and resolution time for users.",
   },
   {
     title: "Software Engineer - Ⅱ",
     company: "GeekyAnts",
     duration: "2023 - Present",
     description:
-      "Elevated enterprise applications by implementing an automated system for efficient responses, designed and integrated real-time chat functionality using Web Sockets for instant communication with features like message synchronization, user presence, and notifications. Ensured frontend security by employing industry-standard encryption algorithms, including AES and RSA, to safeguard sensitive data",
+      "Implemented a dynamic badge system that leverages data and a JSON file to boost user engagement and interaction. Employed best practices and optimization techniques to significantly improve frontend performance, resulting in faster loading times and a smoother user experience.",
   },
 ];
 

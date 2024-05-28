@@ -9,7 +9,7 @@ export default function Content() {
     <motion.div
       initial="hidden"
       animate="visible"
-      className="flex flex-row items-center justify-center px-20 mt-40 w-full z-[20]"
+      className="grid grid-cols-2 px-20 mt-40 w-full z-[20]"
     >
       <div className="h-full w-full flex flex-col gap-5 justify-center m-auto text-start">
         <motion.div
@@ -40,7 +40,7 @@ export default function Content() {
       </div>
       <motion.div
         variants={slideInFromRight(0.8)}
-        className="w-full h-full flex justify-center items-center"
+        className="w-full pl-5 h-full flex justify-center items-center"
       >
         <Image
           src={"/mainIconsDark.svg"}

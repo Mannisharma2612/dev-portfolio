@@ -43,7 +43,7 @@ export default function Content() {
         className="w-full pl-5 h-full flex justify-center items-center"
       >
         <Image
-          src={"/mainIconsDark.svg"}
+          src={"/mainIconsdark.svg"}
           alt="work-icons"
           height={650}
           width={650}

@@ -1,5 +1,6 @@
 import React from "react";
-import ProjectCard from "../atoms/ProjectCard";
+import { AnimatedPinDemo } from "@/components/atoms/Card";
+
 import { PROJECTS } from "@/constants";
 const Projects: React.FC = () => {
   return (
@@ -10,15 +11,14 @@ const Projects: React.FC = () => {
       <h1 className="text-white text-[40px] font-semibold text-transparent bg-clip-text pb-5">
         My Projects
       </h1>
-      <div className="h-auto w-auto flex flex-col md:flex-row gap-10 px-10">
+      <div className="w-full flex flex-col md:flex-row gap-10">
         {PROJECTS?.map((project, index) => {
           return (
-            <ProjectCard
+            <AnimatedPinDemo
               key={index}
               link={project.link}
               title={project.title}
               description={project.description}
-              tech={project.tech}
             />
           );
         })}

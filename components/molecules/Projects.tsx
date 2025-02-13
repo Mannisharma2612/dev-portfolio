@@ -1,8 +1,6 @@
-import React from "react";
-import { AnimatedPinDemo } from "@/components/atoms/Card";
-
 import { PROJECTS } from "@/constants";
-const Projects: React.FC = () => {
+import ProjectCard from "../atoms/ProjectCard";
+const Projects = () => {
   return (
     <section
       id="projects"
@@ -11,17 +9,16 @@ const Projects: React.FC = () => {
       <h1 className="text-white text-[40px] font-semibold text-transparent bg-clip-text pb-5">
         My Projects
       </h1>
-      <div className="w-full flex flex-col md:flex-row gap-10">
-        {PROJECTS?.map((project, index) => {
-          return (
-            <AnimatedPinDemo
-              key={index}
-              link={project.link}
-              title={project.title}
-              description={project.description}
-            />
-          );
-        })}
+      <div className="w-full grid  grid-cols-1 md:grid-cols-2 gap-10">
+        {PROJECTS?.map((project, index) => (
+          <ProjectCard
+            key={index}
+            link={project.link}
+            title={project.title}
+            description={project.description}
+            tech={project.tech}
+          />
+        ))}
       </div>
     </section>
   );

@@ -44,19 +44,6 @@ const Skills: React.FC = () => {
           />
         ))}
       </div>
-      {/* <div className="w-full h-full absolute">
-        <div className="w-full h-full z-[-10] opacity-30 absolute flex items-center justify-center bg-cover">
-          <video
-            className="w-full h-auto"
-            preload={"false"}
-            playsInline
-            loop
-            muted
-            autoPlay
-            src="/warp.webm"
-          />
-        </div>
-      </div> */}
     </section>
   );
 };

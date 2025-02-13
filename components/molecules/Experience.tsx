@@ -3,62 +3,62 @@ import { EXPERIENCES } from "@/constants";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import React from "react";
+
 const Experience: React.FC = () => {
   const { ref, inView } = useInView({
     triggerOnce: true,
   });
 
   const imageVariants = {
-    hidden: { opacity: 0 },
-    visible: { opacity: 1 },
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 },
   };
+
   const delay = 0.3;
 
   return (
-    <section id="experience" className="p-14 overflow-auto">
-      <h1 className="text-center text-[40px] text-white pb-10 font-semibold text-transparent bg-clip-text ">
+    <section id="experience" className="p-6 sm:p-10 overflow-auto">
+      <h1 className="text-center text-4xl font-semibold text-transparent bg-clip-text text-white">
         Experience
       </h1>
-      <ol className="relative border-s border-gray-200 dark:border-gray-700">
-        {EXPERIENCES?.map((exp, index) => {
-          return (
-            <motion.div
-              key={index}
-              ref={ref}
-              initial="hidden"
-              variants={imageVariants}
-              animate={inView ? "visible" : "hidden"}
-              custom={index}
-              transition={{ delay: index * delay }}
-            >
-              <li className="mb-10 ms-6" key={index}>
-                <span className="absolute flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full -start-3 ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900">
-                  <svg
-                    className="w-2.5 h-2.5 text-blue-800 dark:text-blue-300"
-                    aria-hidden="true"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z" />
-                  </svg>
+      <ol className="relative border-l border-gray-700">
+        {EXPERIENCES?.map((exp, index) => (
+          <motion.div
+            key={index}
+            ref={ref}
+            initial="hidden"
+            variants={imageVariants}
+            animate={inView ? "visible" : "hidden"}
+            custom={index}
+            transition={{ delay: index * delay }}
+          >
+            <li className="mb-10 ml-6">
+              <span className="absolute flex items-center justify-center w-6 h-6 rounded-full -left-3 ring-8 ring-gray-900 bg-[#2A0E61]">
+                <svg
+                  className="w-2.5 h-2.5 text-white"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z" />
+                </svg>
+              </span>
+              <h3 className="flex items-center mb-1 text-lg font-semibold text-white">
+                {exp?.title}{" "}
+                <span className="text-sm font-medium ml-3 px-2.5 py-0.5 rounded bg-[#2A0E61] text-white">
+                  {exp?.company}
                 </span>
-                <h3 className="flex items-center mb-1 text-lg font-semibold text-gray-900 dark:text-white">
-                  {exp?.title}{" "}
-                  <span className="bg-blue-100 text-blue-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 ms-3">
-                    {exp?.company}
-                  </span>
-                </h3>
-                <time className="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
-                  {exp?.duration}
-                </time>
-                <p className="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">
-                  {exp?.description}
-                </p>
-              </li>
-            </motion.div>
-          );
-        })}
+              </h3>
+              <time className="block mb-2 text-sm font-normal leading-none text-gray-500">
+                {exp?.duration}
+              </time>
+              <p className="mb-4 text-base font-normal text-gray-400">
+                {exp?.description}
+              </p>
+            </li>
+          </motion.div>
+        ))}
       </ol>
     </section>
   );

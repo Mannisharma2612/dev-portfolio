@@ -1,48 +1,104 @@
+"use client";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 import { RxGithubLogo, RxLinkedinLogo } from "react-icons/rx";
+import { HiMenu, HiX } from "react-icons/hi";
 
 const Navbar: React.FC = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const closeMenu = () => {
+    setIsOpen(false);
+  };
+
+  const navLinkClasses =
+    "relative text-gray-200 text-lg font-medium transition-all duration-300 hover:text-white";
+
   return (
-    <div className="w-full h-[65px] fixed top-0 shadow-lg shadow-[#2A0E61]/50 bg-[#03001417] backdrop-blur-md z-50 px-10">
-      <div className="w-full h-full flex flex-row items-center justify-between m-auto px-[10px]">
-        <div className="w-[500px] h-full flex flex-row items-center justify-between md:mr-20">
-          <div className="flex gap-5 items-center justify-between w-full h-auto  bg-[#0300145e] mr-[15px] px-[20px] py-[10px] rounded-full text-gray-200">
-            <a
-              href="#skills"
-              className="cursor-pointer hover:border-b-2 border-b-white"
-            >
-              Skills
-            </a>
-            <a
-              href="#experience"
-              className="cursor-pointer hover:border-b-2 border-b-white"
-            >
-              Experience
-            </a>
-            <a
-              href="#projects"
-              className="cursor-pointer hover:border-b-2 border-b-white"
-            >
-              Projects
-            </a>
-          </div>
+    <div className="sticky top-0 z-50 bg-[#03001417] backdrop-blur-md shadow-lg">
+      <div className="flex items-center justify-between h-[65px] px-5 md:px-10">
+        {/* Left Section: Navigation Links */}
+        <div className="hidden md:flex w-auto gap-8">
+          <NavLink href="#skills" className={navLinkClasses}>
+            Skills
+          </NavLink>
+          <NavLink href="#experience" className={navLinkClasses}>
+            Experience
+          </NavLink>
+          <NavLink href="#projects" className={navLinkClasses}>
+            Projects
+          </NavLink>
         </div>
 
-        <div className="flex cursor-pointer flex-row gap-5">
-          <Link href={"https://github.com/Mannisharma2612"} target="_blank">
+        {/* Mobile Menu Button */}
+        <div className="md:hidden">
+          <button onClick={toggleMenu} className="text-gray-200">
+            {isOpen ? <HiX size={30} /> : <HiMenu size={30} />}
+          </button>
+        </div>
+
+        {/* Right Section: Social Links */}
+        <div className="flex gap-5 items-center">
+          <Link href="https://github.com/Mannisharma2612" target="_blank">
             <RxGithubLogo color="white" size={26} />
           </Link>
-          <Link
-            href={"https://www.linkedin.com/in/manni-sharma"}
-            target="_blank"
-          >
+          <Link href="https://www.linkedin.com/in/manni-sharma" target="_blank">
             <RxLinkedinLogo color="white" size={26} />
           </Link>
         </div>
       </div>
+
+      {/* Mobile Menu */}
+      {isOpen && (
+        <div className="md:hidden flex flex-col items-start gap-5 mt-4 bg-[#0300145e] p-5 rounded-lg">
+          <NavLink
+            href="#skills"
+            className={navLinkClasses}
+            onClick={closeMenu}
+          >
+            Skills
+          </NavLink>
+          <NavLink
+            href="#experience"
+            className={navLinkClasses}
+            onClick={closeMenu}
+          >
+            Experience
+          </NavLink>
+          <NavLink
+            href="#projects"
+            className={navLinkClasses}
+            onClick={closeMenu}
+          >
+            Projects
+          </NavLink>
+        </div>
+      )}
     </div>
   );
 };
+
+interface NavLinkProps {
+  href: string;
+  className?: string;
+  children: React.ReactNode;
+  onClick?: () => void;
+}
+
+const NavLink: React.FC<NavLinkProps> = ({
+  href,
+  className,
+  children,
+  onClick,
+}) => (
+  <Link href={href} className={`${className} group relative`} onClick={onClick}>
+    <span className="group-hover:text-white">{children}</span>
+    <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-gradient-to-r from-[#2A0E61] to-white transition-all duration-300 group-hover:w-full"></span>
+  </Link>
+);
 
 export default Navbar;

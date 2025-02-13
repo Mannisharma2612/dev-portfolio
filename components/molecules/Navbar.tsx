@@ -7,19 +7,14 @@ import { HiMenu, HiX } from "react-icons/hi";
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
-
-  const closeMenu = () => {
-    setIsOpen(false);
-  };
+  const toggleMenu = () => setIsOpen(!isOpen);
+  const closeMenu = () => setIsOpen(false);
 
   const navLinkClasses =
     "relative text-gray-200 text-lg font-medium transition-all duration-300 hover:text-white";
 
   return (
-    <div className="sticky top-0 z-50 bg-[#03001417] backdrop-blur-md shadow-lg">
+    <div className="sticky top-0 z-30 bg-[#03001417] backdrop-blur-md shadow-lg border-b border-white">
       <div className="flex items-center justify-between h-[65px] px-5 md:px-10">
         {/* Left Section: Navigation Links */}
         <div className="hidden md:flex w-auto gap-8">
@@ -54,7 +49,7 @@ const Navbar: React.FC = () => {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden flex flex-col items-start gap-5 mt-4 bg-[#0300145e] p-5 rounded-lg">
+        <div className="md:hidden flex flex-col items-start gap-5 mt-4 bg-[#0300145e] p-5 rounded-lg shadow-md">
           <NavLink
             href="#skills"
             className={navLinkClasses}
@@ -98,6 +93,7 @@ const NavLink: React.FC<NavLinkProps> = ({
   <Link href={href} className={`${className} group relative`} onClick={onClick}>
     <span className="group-hover:text-white">{children}</span>
     <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-gradient-to-r from-[#2A0E61] to-white transition-all duration-300 group-hover:w-full"></span>
+    <span className="absolute inset-0 rounded-lg shadow-[0_4px_15px_0_rgba(42,14,97,0.3)] group-hover:shadow-[0_0px_20px_0_rgba(42,14,97,0.5)]"></span>
   </Link>
 );
 

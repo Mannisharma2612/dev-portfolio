@@ -8,7 +8,7 @@ const Footer: React.FC = () => {
     <div className=" w-full h-full bg-transparent text-gray-200 shadow-lg p-[15px]">
       <div className="w-full h-full flex flex-col items-center">
         <div className="font-bold text-2xl pb-5">Contact</div>
-        <div className="z-[20] w-auto h-auto flex flex-row gap-10 items-center flex-wrap flex-auto justify-center">
+        <div className="w-auto h-auto flex flex-row gap-10 items-center flex-wrap flex-auto justify-center">
           <Link href={"https://github.com/Mannisharma2612"} target="_blank">
             <p className="flex flex-row items-center my-[15px] cursor-pointer">
               <RxGithubLogo color="white" size={26} />

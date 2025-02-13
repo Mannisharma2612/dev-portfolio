@@ -1,5 +1,5 @@
+"use client";
 import Link from "next/link";
-import React from "react";
 import {
   FaReact,
   FaJs,
@@ -89,7 +89,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         <Link
           href={link ?? ""}
           target="_blank"
-          className="relative inline-flex items-center justify-center px-6 py-3 font-bold text-white transition-all duration-300 bg-[#2A0E61] rounded-md shadow-lg group hover:bg-[#3B1785]"
+          className="relative cursor-pointer inline-flex items-center justify-center px-6 py-3 font-bold text-white transition-all duration-300 bg-[#2A0E61] rounded-md shadow-lg group hover:bg-[#3B1785]"
         >
           <span className="absolute inset-0 w-full h-full transition-transform duration-300 transform translate-x-1 translate-y-1 bg-[#3B1785] rounded-md group-hover:translate-x-0 group-hover:translate-y-0"></span>
           <span className="absolute inset-0 w-full h-full bg-[#2A0E61] rounded-md"></span>

@@ -53,9 +53,16 @@ const Experience: React.FC = () => {
               <time className="block mb-2 text-sm font-normal leading-none text-gray-500">
                 {exp?.duration}
               </time>
-              <p className="mb-4 text-base font-normal text-gray-400">
-                {exp?.description}
-              </p>
+              <ul className="mb-4 text-base font-normal text-gray-400 list-disc list-inside leading-relaxed pl-4">
+                {exp?.description
+                  ?.split("\n")
+                  ?.filter(i => i.trim()) 
+                  ?.map((point, i) => (
+                    <li key={i} style={{listStyle: 'outside'}} >
+                      {point.trim()}
+                    </li>
+                  ))}
+              </ul>
             </li>
           </motion.div>
         ))}

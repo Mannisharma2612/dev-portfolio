@@ -31,6 +31,8 @@ export default function Content() {
           development
         </motion.p>
         <motion.a
+        href="https://drive.google.com/file/d/1epQanw7RM2LE-miQKyPe-NUYGnApvKXF/view"
+        target="_blank"
           variants={slideInFromLeft(1)}
           className="justify-center flex gap-2 items-center py-2 button-primary text-center text-white cursor-pointer rounded-lg max-w-[200px]"
         >

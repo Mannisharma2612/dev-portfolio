@@ -27,12 +27,12 @@ export default function Content() {
           variants={slideInFromLeft(0.8)}
           className="text-lg text-gray-400  max-w-[600px]"
         >
-          Enthusiastic Frontend Developer with a burgeoning interest in back-end
-          development
+          Building the interfaces you interact with and the logic that makes
+          them work.
         </motion.p>
         <motion.a
-        href="https://drive.google.com/file/d/1epQanw7RM2LE-miQKyPe-NUYGnApvKXF/view"
-        target="_blank"
+          href="https://drive.google.com/file/d/1epQanw7RM2LE-miQKyPe-NUYGnApvKXF/view"
+          target="_blank"
           variants={slideInFromLeft(1)}
           className="justify-center flex gap-2 items-center py-2 button-primary text-center text-white cursor-pointer rounded-lg max-w-[200px]"
         >

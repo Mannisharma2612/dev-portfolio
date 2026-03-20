@@ -198,16 +198,19 @@ export const OtherSkills = [
 
 export const EXPERIENCES = [
   {
-    title: "Bachelor Of Engineering",
-    duration: "2018 - 2022",
-    company: "Chitkara University",
+    title: "Senior Experience Engineer",
+    company: "Publicis Sapient",
+    duration: "April 2025 - Present",
+    description:
+      "Led technical implementation for the Experimentation Team, architecting A/B tests and personalization engines that drove a 20%–30% revenue increase during high-traffic events.\nRefactored application modules in Next.js using SSR and SSG, resulting in a 40% improvement in page load speed and a 25% boost in Lighthouse performance scores.\nEngineered a modular personalization engine using TypeScript and Web Components, achieving sub-second load times and maintaining strict WCAG accessibility compliance.\nOptimized checkout funnels and frontend workflows with Next.js server-side logic, significantly boosting conversion rates and user engagement across enterprise domains.\nDesigned and developed a library of reusable UI components with Tailwind CSS, accelerating feature development cycles by 30% for Fintech and Travel platforms.",
   },
   {
-    title: "Software Development Intern",
+    title: "Software Engineer - Ⅱ",
     company: "GeekyAnts",
-    duration: "July 2021 - July 2022",
-    description:
-      "Engineered a comprehensive design system with flexible UI components, integrated micro frontends into a cohesive and scalable architecture, and deployed real-time data analytics graphs to enable dynamic monitoring of key metrics, empowering users with actionable insights.",
+    duration: "July 2023 - Feb 2025",
+    description: `Enhanced full-stack applications with Next.js, leveraging SSR and SSG, resulting in a 40% faster page load time and a 35% improvement in SEO performance.\n
+      Refactored application modules in Next.js, improving page load speed by 40% and boosting Lighthouse performance scores by 25%.\n
+      Designed and developed reusable UI components in Next.js with Tailwind CSS, accelerating feature development by 30%.`,
   },
   {
     title: "Software Engineer",
@@ -217,14 +220,12 @@ export const EXPERIENCES = [
       "Implemented an automated system for responding to multiple-choice questions (MCQs) based on Redux data along with a JSON configuration file which increased the efficiency and resolution time for users.",
   },
   {
-    title: "Software Engineer - Ⅱ",
+    title: "Software Development Intern",
     company: "GeekyAnts",
-    duration: "July 2023 - Feb 2025",
+    duration: "July 2021 - July 2022",
     description:
-      `Enhanced full-stack applications with Next.js, leveraging SSR and SSG, resulting in a 40% faster page load time and a 35% improvement in SEO performance.\n
-      Refactored application modules in Next.js, improving page load speed by 40% and boosting Lighthouse performance scores by 25%.\n
-      Designed and developed reusable UI components in Next.js with Tailwind CSS, accelerating feature development by 30%.`,
-  }
+      "Engineered a comprehensive design system with flexible UI components, integrated micro frontends into a cohesive and scalable architecture, and deployed real-time data analytics graphs to enable dynamic monitoring of key metrics, empowering users with actionable insights.",
+  },
 ];
 
 export const PROJECTS = [
